@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>QCDok | Home </title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Nursery Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //custom-theme -->
+<style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 9px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link rel="stylesheet" href="css/easy-responsive-tabs.css">
+<link rel="stylesheet" href="css/jquery.gallery.css">
+<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+<!-- font-awesome-icons -->
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome-icons -->
+<link href="//fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+</head>
+	
+<body>
+<script src="js/jquery.vide.min.js"></script>
+<!-- header -->
+	<div class="w3_agile_header">
+		<div class="container">
+			<div class="w3_agile_header_left">
+				<p>QCDok.com</p>
+			</div>
+			<div class="w3_agile_header_right">
+				<ul>
+					
+					<div class="dropdown">
+  <button class="dropbtn">SIGN UP</button>
+  <div class="dropdown-content">
+    <a href="reg/doc_reg.php">Doctors</a>
+    <a href="reg/pat_reg.php">Patients</a>
+  </div>
+</div>
+                    <li><a href="#small-dialog" class="play-icon popup-with-zoom-anim">Login</a></li>
+				</ul>
+				
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!--<div class="w3_navigation">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!--<div class="w3_navigation_pos">
+						<h1><a href="index.html">PVS Govt HSS<i>pampady</i></a></h1>
+					</div>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<!--<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					<nav class="menu menu--miranda">
+						<ul class="nav navbar-nav menu__list">
+							<li class="menu__item"><a href="index.html" class="menu__link">Home</a></li>
+							<li class="menu__item"><a href="#events" class="scroll menu__link">Our Events</a></li>
+							<li class="menu__item"><a href="#programs" class="scroll menu__link">About</a></li>
+                           <!-- <li class="menu__item"><a href="#work" class="scroll menu__link"></a></li>
+                             <li class="menu__item"><a href="#work" class="scroll menu__link"></a></li>-->
+							<!--<li class="menu__item"><a href="#work" class="scroll menu__link">Work</a></li>
+							<li class="menu__item"><a href="#team" class="scroll menu__link">Team</a></li>
+							
+						</ul>
+					</nav>
+				</div>
+			</nav>	
+		</div>
+	</div> -->
+<!-- //header -->
+<!-- pop-up-box -->
+<div id="small-dialog" class="mfp-hide w3ls_small_dialog wthree_pop">
+<script type="text/javascript">
+$(document).ready(function(){
+   $("#login").click(function(){
+	   
+    
+        username=$("#username").val();
+        password=$("#password").val();
+         $.ajax({
+            type: "POST",
+            url: "login_validation.php",
+            data: "name="+username+"&pwd="+password,
+		    success: function(data){
+				
+				//alert(data);
+              if(data == 1)
+              {
+				 // alert("Hereeee");
+                 window.location='admin/admin_home.php';
+				
+			  }
+			  else if(data == 2)
+              {
+				 // alert("Hereeee");
+                 window.location='doctor/doctor_home.php';
+				
+              }
+			  else if(data == 3)
+              {
+				 // alert("Hereeee");
+                 window.location='patient/patient_home.php';
+				
+              }
+			  
+              else
+              {
+			window.alert("Invalid username or password");
+                   <!-- $("#add_err").html("Invalid username or password");-->
+              }
+            },
+            /*beforeSend:function()
+			{  
+                $("#add_err").html("Loading...")
+            }*/
+        });
+         return false;
+    });
+});
+</script>
+
+<!--	<div id="small-dialog" class="mfp-hide w3ls_small_dialog wthree_pop">-->
+		<h3>LOGIN</h3>		
+		<div class="agileits_modal_body">
+			<form action="#" method="post">
+				<div class="agileits_w3layouts_user">
+					<i class="fa fa-user" aria-hidden="true"></i>
+						<input type="text" name="username" id="username" placeholder="User Name">
+				</div>
+				<div class="agileits_w3layouts_user">
+					<i class="fa fa-key" aria-hidden="true"></i>
+					<input type="password" placeholder="Password" name="password" id="password">
+				</div>
+				<div class="agile_remember">
+					<!--<div class="agile_remember_left">
+						<div class="check">
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>remember me</label>
+						</div>
+					</div>
+					<div class="agile_remember_right">
+						<a href="#">Forgot Password?</a>
+					</div>-->
+					<div class="clearfix"> </div>
+				</div>
+				<input type="submit" id="login" value="LogIn">
+			</form>
+			<h5>Don't have an account? <a href="signup.php" >Sign Up</a></h5>
+		</div>
+	</div>
+	<div id="small-dialog1" class="mfp-hide w3ls_small_dialog wthree_pop">
+		<h3>Sign Up</h3>		
+		<div class="agileits_modal_body">
+			<form action="#" method="post">
+				<h4>Profile information :</h4>
+				<div class="agileits_w3layouts_user">
+					<i class="fa fa-user" aria-hidden="true"></i>
+					<input type="text" name="Name" placeholder="First Name" required="">
+				</div>
+				<!--<div class="agileits_w3layouts_user">
+					<i class="fa fa-user" aria-hidden="true"></i>
+					<input type="text" name="Name" placeholder="User Name" required="">
+				</div>-->
+				
+				<h4>Login information :</h4>
+                <div class="agileits_w3layouts_user">
+					<i class="fa fa-user" aria-hidden="true"></i>
+					<input type="text" name="Name" placeholder="User Name" required="">
+				</div><br>
+				<div class="agileits_w3layouts_user">
+					<i class="fa fa-envelope-o" aria-hidden="true"></i>
+					<input type="email" name="Email" placeholder="Email" required="">
+				</div>
+				<div class="agileits_w3layouts_user agileits_w3layouts_user_agileits">
+					<i class="fa fa-key" aria-hidden="true"></i>
+					<input type="password" name="Password" placeholder="Password" required="">
+				</div>
+				<div class="agileits_w3layouts_user">
+					<i class="fa fa-key" aria-hidden="true"></i>
+					<input type="password" name="Password" placeholder="Confirm Password" required="">
+				</div>
+				<!--<div class="agileinfo_subscribe">
+					<div class="check">
+						<label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>i accept the terms and conditions</label>
+					</div>
+				</div>-->
+				<input type="submit" value="Register">
+			</form>
+			<h5>Already a member <a href="signup.php" >Sign In</a></h5>
+		</div>
+	</div>
+<!-- //pop-up-box -->
+<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+<script>
+	$(document).ready(function() {
+	$('.popup-with-zoom-anim').magnificPopup({
+		type: 'inline',
+		fixedContentPos: false,
+		fixedBgPos: true,
+		overflowY: 'auto',
+		closeBtnInside: true,
+		preloader: false,
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in'
+	});
+																	
+	});
+</script>
+<!-- banner -->
+	<div data-vide-bg="video/Hospital">
+		<div class="center-container">
+			<div class="container">
+				<div class="w3_agile_banner_info">
+					<p class="w3_agileits_banner_para"><span>CR7 Presents</span></p>
+					<div class="agileits_w3layouts_header">
+						<h2 class="test2">QCDok.com</h2>
+					</div>
+					<p class="w3_elit_para">Easy Doctor Booking, now at your fingertips!.</p>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- bootstrap-pop-up -->
+	<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					Nursery
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+				</div>
+				<section>
+					<div class="modal-body">
+						<div class="w3_modal_body_left">
+							<img src="images/1.jpg" alt=" " class="img-responsive" />
+						</div>
+						<div class="w3_modal_body_right">
+							<h4>Suspendisse et sapien ac diam suscipit posuere</h4>
+							<p>Ut enim ad minima veniam, quis nostrum 
+							exercitationem ullam corporis suscipit laboriosam, 
+							nisi ut aliquid ex ea commodi consequatur? Quis autem 
+							vel eum iure reprehenderit qui in ea voluptate velit 
+							esse quam nihil molestiae consequatur.
+							<i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit 
+								esse quam nihil molestiae consequatur.</i>
+								Fusce in ex eget ligula tempor placerat. Aliquam laoreet mi id felis commodo 
+								interdum. Integer sollicitudin risus sed risus rutrum 
+								elementum ac ac purus.</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+    &nbsp;
+    <div class="container">
+   <center> <h3>About <span>QCDok</span></h3></center>
+					<p>Booking doctor appointments has never been as easy as it is on QCDok.com. That's one less worry when you need medical attention. With QCDok.com, you can now focus on getting well faster.</p>
+                        </div>
+<!-- //bootstrap-pop-up -->
+			<div class="wthree_footer_grid_right_main1">
+				<ul class="agileinfo_social_icons agileits_footer_social">
+					<li><a href="#" class="agileits_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="#" class="w3_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="#" class="w3l_google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+					<li><a href="#" class="w3ls_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+	<div class="w3layouts_copy_right">
+		<div class="container">
+			<p>© 2018 QCDok.com. All rights reserved | Design by <a href="https://www.facebook.com/vishnuthekkilakkattil">CR7.</a></p>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- contact-effect -->
+<script src="js/classie.js"></script>
+<script>
+	(function() {
+		// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+		if (!String.prototype.trim) {
+			(function() {
+				// Make sure we trim BOM and NBSP
+				var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+				String.prototype.trim = function() {
+					return this.replace(rtrim, '');
+				};
+			})();
+		}
+
+		[].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+			// in case the input is already filled..
+			if( inputEl.value.trim() !== '' ) {
+				classie.add( inputEl.parentNode, 'input--filled' );
+			}
+
+			// events:
+			inputEl.addEventListener( 'focus', onInputFocus );
+			inputEl.addEventListener( 'blur', onInputBlur );
+		} );
+
+		function onInputFocus( ev ) {
+			classie.add( ev.target.parentNode, 'input--filled' );
+		}
+
+		function onInputBlur( ev ) {
+			if( ev.target.value.trim() === '' ) {
+				classie.remove( ev.target.parentNode, 'input--filled' );
+			}
+		}
+	})();
+</script>
+<!-- //contact-effect -->
+<!-- work -->
+	<script type="text/javascript"  src="js/jquery.gallery.js" ></script>
+	<script>
+		$(function() {
+			$('.w3_tab_img').createSimpleImgGallery();
+		});
+	</script>
+<!-- //work -->
+<!-- flexisel -->
+	<script type="text/javascript">
+		$(window).load(function() {
+			$("#flexiselDemo1").flexisel({
+				visibleItems: 5,
+				animationSpeed: 1000,
+				autoPlay: true,
+				autoPlaySpeed: 3000,    		
+				pauseOnHover: true,
+				enableResponsiveBreakpoints: true,
+				responsiveBreakpoints: { 
+					portrait: { 
+						changePoint:480,
+						visibleItems: 1
+					}, 
+					landscape: { 
+						changePoint:640,
+						visibleItems:3
+					},
+					tablet: { 
+						changePoint:768,
+						visibleItems: 3
+					}
+				}
+			});
+			
+		});
+	</script>
+	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+<!-- //flexisel -->
+<!-- team-slider -->
+	<script type="text/javascript" src="js/jquery.glide.js"></script>
+	<script type="text/javascript">
+		var glide = $('.w3_slider').glide().data('api_glide');
+
+			$(window).on('keyup', function (key) {
+				if (key.keyCode === 13) {
+					glide.jump(3, console.log('Wooo!'));
+				};
+			});
+	</script>
+<!-- //team-slider -->
+<!-- responsive-tabs -->
+	<script src="js/easy-responsive-tabs.js"></script>
+	<script>
+		$(document).ready(function () {
+		$('#verticalTab').easyResponsiveTabs({
+		type: 'vertical',
+		width: 'auto',
+		fit: true
+		});
+		});
+	</script>
+<!-- //responsive-tabs -->	
+<!-- text-effect -->
+		<script type="text/javascript" src="js/jquery.transit.js"></script> 
+		<script type="text/javascript" src="js/jquery.textFx.js"></script> 
+		<script type="text/javascript">
+			$(document).ready(function() {
+					$('.test2').textFx({
+						type: 'slideIn',
+						direction: 'right',
+						iChar: 250,
+						iAnim: 1000
+					});
+			});
+		</script>
+<!-- //text-effect -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+<!-- for bootstrap working -->
+	<script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+</body>
+</html>
